@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        FitBuddy | Admin Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<main class="container wide">
+
+
+    <section class="hero">
+
+        <div>
+
+            <span class="badge">
+                ADMIN DASHBOARD
+            </span>
+
+            <h1>
+                All Users
+            </h1>
+
+            <p>
+                View registered FitBuddy users
+                and their plans.
+            </p>
+
+        </div>
+
+
+        <a
+            href="/"
+            class="admin-link"
+        >
+            ← Home
+        </a>
+
+    </section>
+
+
+    {% if users %}
+
+
+        {% for user in users %}
+
+
+        <section class="card user-card">
+
+
+            <div class="user-header">
+
+
+                <div>
+
+                    <h2>
+                        {{ user.username }}
+                    </h2>
+
+                    <p>
+                        User ID:
+                        {{ user.user_id }}
+                    </p>
+
+                </div>
+
+
+                <form
+                    method="post"
+                    action="/delete-user/{{ user.user_id }}"
+                    onsubmit="return confirm('Delete this user?')"
+                >
+
+                    <button
+                        type="submit"
+                        class="delete-button"
+                    >
+                        Delete
+                    </button>
+
+                </form>
+
+
+            </div>
+
+
+            <div class="user-info">
+
+
+                <span>
+                    Age: {{ user.age }}
+                </span>
+
+
+                <span>
+                    Weight: {{ user.weight }} kg
+                </span>
+
+
+                <span>
+                    Goal: {{ user.goal }}
+                </span>
+
+
+                <span>
+                    Intensity: {{ user.intensity }}
+                </span>
+
+
+            </div>
+
+
+            <details>
+
+                <summary>
+                    Original Workout Plan
+                </summary>
+
+
+                <pre class="plan">
+{{ user.original_plan }}
+                </pre>
+
+            </details>
+
+
+            {% if user.updated_plan %}
+
+            <details>
+
+                <summary>
+                    Updated Workout Plan
+                </summary>
+
+
+                <pre class="plan">
+{{ user.updated_plan }}
+                </pre>
+
+            </details>
+
+            {% endif %}
+
+
+        </section>
+
+
+        {% endfor %}
+
+
+    {% else %}
+
+
+        <section class="card">
+
+            <h2>
+                No Users Yet
+            </h2>
+
+            <p>
+                Generate your first FitBuddy
+                plan from the home page.
+            </p>
+
+        </section>
+
+
+    {% endif %}
+
+
+</main>
+
+</body>
+
+</html>

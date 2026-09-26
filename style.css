@@ -1,0 +1,433 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #f1f5f9;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(34, 197, 94, 0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom left,
+            rgba(59, 130, 246, 0.15),
+            transparent 35%
+        ),
+
+        #08111f;
+}
+
+
+.container {
+
+    width: min(
+        950px,
+        calc(100% - 32px)
+    );
+
+    margin: auto;
+
+    padding: 35px 0 60px;
+}
+
+
+.container.wide {
+
+    width: min(
+        1200px,
+        calc(100% - 32px)
+    );
+}
+
+
+.hero {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.badge {
+
+    color: #4ade80;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+h1 {
+
+    font-size: 55px;
+
+    margin: 8px 0;
+}
+
+
+h2 {
+
+    margin-top: 0;
+}
+
+
+p {
+
+    color: #b7c2d1;
+
+    line-height: 1.6;
+}
+
+
+.card {
+
+    background: #111c2e;
+
+    border: 1px solid #263750;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+.admin-link {
+
+    color: #93c5fd;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+label {
+
+    font-weight: bold;
+
+    color: #dce7f5;
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    border: 1px solid #344761;
+
+    background: #0b1524;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+
+    margin-bottom: 15px;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: 2px solid #60a5fa;
+}
+
+
+.primary-button {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #22c55e;
+
+    color: #06120a;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.primary-button:hover {
+
+    filter: brightness(1.1);
+}
+
+
+.error {
+
+    background: #501d1d;
+
+    color: #fecaca;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+.warning {
+
+    font-size: 13px;
+
+    margin-bottom: 0;
+
+    margin-top: 20px;
+}
+
+
+.profile-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+
+.profile-grid div {
+
+    background: #0b1524;
+
+    padding: 15px;
+
+    border-radius: 12px;
+}
+
+
+.profile-grid strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+
+    margin-bottom: 6px;
+}
+
+
+.profile-grid span {
+
+    display: block;
+
+    font-weight: bold;
+}
+
+
+.plan {
+
+    white-space: pre-wrap;
+
+    overflow-x: auto;
+
+    background: #08111d;
+
+    border: 1px solid #263750;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    color: #dce7f5;
+
+    line-height: 1.7;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+}
+
+
+.tip {
+
+    border-color: #31583d;
+}
+
+
+.user-card {
+
+    margin-bottom: 18px;
+}
+
+
+.user-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.user-info {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+
+.user-info span {
+
+    background: #0b1524;
+
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    color: #cbd5e1;
+}
+
+
+.delete-button {
+
+    padding: 11px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ef4444;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+summary {
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+
+@media (max-width: 750px) {
+
+    .hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    h1 {
+
+        font-size: 42px;
+    }
+
+
+    .grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .user-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
