@@ -6,7 +6,7 @@ from pathlib import Path
 
 from .database import init_db
 
-from .routes import router
+from routes import router
 
 app = FastAPI(
 
